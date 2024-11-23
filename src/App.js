@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Cards from './components/Cards';
+import Countries from './components/Countries';
+import Chart from './components/Chart';
 
 function App() {
+  console.log('API URL:', process.env.REACT_APP_COVID_TRACKER_API_URL);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto py-6 px-4 max-w-[1200px] h-screen text-center">
+      <Header />
+      <div className="mb-8">
+        <Cards />
+      </div>
+      <div className="mb-8">
+        <Countries />
+      </div>
+      <div className="mb-8">
+        <Chart />
+      </div>
     </div>
   );
 }
